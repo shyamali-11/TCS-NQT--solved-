@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	int[] a={4, 2, 8, 6, 15, 5, 9, 20};
+	
+	   rearrange(a);
+	   
+	   for(int i=0;i<a.length;i++){
+	       System.out.print(a[i]+" ");
+	   }
+	}
+	
+	
+	public static void rearrange(int[] a){
+	    Arrays.sort(a);
+	    
+	    int i=a.length/2,j=a.length-1;
+	    
+	    while(i<j){
+	        int temp=a[i];
+	        a[i]=a[j];
+	        a[j]=temp;
+	        i++;
+	        j--;
+	    }
+	    
+	}
+}
