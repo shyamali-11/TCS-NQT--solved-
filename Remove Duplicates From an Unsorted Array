@@ -1,0 +1,24 @@
+class Solution {
+    
+    public int[] removeDuplicate(int a[], int n)
+    {
+
+     //Linked Hash Set used to store data in same order as inserted
+      Set<Integer> li=new LinkedHashSet<>();
+
+
+      for(int i=0;i<n;i++){
+            li.add(a[i]);
+        }
+         
+        
+      int[] res = new int[li.size()];
+      
+     
+      int i=0;
+      for(int element:li){
+          res[i++]=element;
+      }
+        return res;
+     }
+}
