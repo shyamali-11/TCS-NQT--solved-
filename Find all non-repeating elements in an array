@@ -1,0 +1,37 @@
+class Check{
+    
+    public int firstNonRepeating(int a[], int n) 
+    { 
+      
+        HashMap<Integer,Integer> hs=new HashMap<>();
+        
+        for(int i=0;i<n;i++){
+            if(!hs.containsKey(a[i])){
+                 hs.put(a[i],1);
+                 
+                
+            }
+             
+              
+            else{
+                
+                int val=hs.get(a[i]);
+                hs.put(a[i],val+1);
+            }
+        }
+        int val=0;
+        ArrayList<Integer> li=new ArrayList<>();
+        for(Map.Entry<Integer,Integer> h:hs.entrySet()){
+            
+            
+            if(h.getValue()==1)
+              li.add(h.getKey()) ;
+        }
+        for(int i=0;i<a.length;i++){
+            if(li.contains(a[i]))
+              return a[i];
+        }
+        return 0;
+    }  
+    
+}
