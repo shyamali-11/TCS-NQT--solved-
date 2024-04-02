@@ -1,0 +1,33 @@
+class GfG
+{
+           public static int findEquilibrium(int a[], int n)
+              {
+             
+                
+                int total=0,left=0,right=0;
+                
+                for(int i=0;i<n;i++){
+                    total+=a[i];
+                }
+                
+                
+                for(int i=0;i<n;i++){
+                    
+                        left+=a[i];
+                    right=total-left;
+                    
+                    if(i!=0||i!=n-1){
+                        
+                         
+                    if(right==left-a[i]){
+                        return i;
+                    }
+                    
+                    }
+                   
+                
+                }
+                
+                return -1;
+              }
+}
