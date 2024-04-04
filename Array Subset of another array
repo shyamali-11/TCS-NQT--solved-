@@ -1,0 +1,56 @@
+class Compute {
+    public String isSubset( long a[], long b[], long n, long m) {
+        
+        HashMap<Long,Integer> hmapp1=new HashMap<>();
+		
+		
+		HashMap<Long,Integer> hmapp2=new HashMap<>();
+		
+		
+		
+		for(int i=0;i<a.length;i++){
+		    
+		    if(hmapp1.containsKey(a[i])){
+		       hmapp1.put(a[i],hmapp1.get(a[i])+1);
+		    }
+		    
+		    else{
+		        hmapp1.put(a[i],1);
+		    }
+		}
+		
+		
+		for(int i=0;i<b.length;i++){
+		    
+		    if(hmapp2.containsKey(b[i])){
+		       hmapp2.put(b[i],hmapp2.get(b[i])+1);
+		    }
+		    
+		    else{
+		        hmapp2.put(b[i],1);
+		    }
+		}
+		
+		
+		
+		for(Map.Entry<Long,Integer> h : hmapp2.entrySet()){
+		    
+		    int freq=h.getValue();
+		    long val=h.getKey();
+		    
+		    if(hmapp1.containsKey(val)){
+		        if(hmapp1.get(val)<freq){
+		            return  "No";
+		        }
+		        
+		    }
+		    
+		    else{
+		       
+		        return "No";
+		    }
+		}
+		
+		return "Yes";
+    }
+}
