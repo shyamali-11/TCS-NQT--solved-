@@ -1,0 +1,18 @@
+class Reverse
+{
+    // Complete the function
+    // str: input string
+    public static String reverseWord(String str)
+    {
+       int j=str.length()-1;
+       
+       String res="";
+       
+       while(j>=0){
+           res+=Character.toString(str.charAt(j));
+           j--;
+       }
+       
+       return res;
+    }
+}
