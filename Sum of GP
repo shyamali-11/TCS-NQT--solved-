@@ -1,0 +1,38 @@
+class Solution
+{
+    public long sum_of_gp(long n, long a, long r)
+    {
+       
+       long numerator=0;
+       
+       long denominator=0;
+       
+       
+        if(r>1){
+            
+           numerator=a*(((int)Math.pow(r,n))-1);
+        
+             denominator=r-1;
+            
+             return numerator/denominator;
+        }
+        
+        else if(r==1){
+            
+            return n*a;
+            
+        }
+        
+        else{
+            
+            numerator=a*(1-(int)Math.pow(r,n));
+            
+            denominator=1-r;
+             
+            
+        }
+       
+       return numerator/denominator;
+       
+    }
+}
