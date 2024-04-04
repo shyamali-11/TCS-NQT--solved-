@@ -1,0 +1,10 @@
+class Solution
+{
+    public long sum_of_ap(long n, long a, long d)
+    {
+      
+        long last=a+((n-1)*d);
+        
+        return (n*(a+last))/2;
+    }
+}
