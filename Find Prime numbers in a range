@@ -1,0 +1,27 @@
+class Solution {
+    ArrayList<Integer> primeRange(int m, int n) {
+        
+        
+        ArrayList<Integer> li=new ArrayList<>();
+        
+        for(int i=m;i<=n;i++){
+            if(i!=1&&checkPrime(i))
+             li.add(i);
+        }
+        
+        return li;
+    }
+    
+    
+    boolean checkPrime(int a){
+        
+       
+        
+        for(int i=2;i*i<=a;i++){
+            
+            if(a%i==0)
+             return false;
+        }
+        return true;
+    }
+}
