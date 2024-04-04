@@ -1,0 +1,38 @@
+public class Main
+{
+	public static void main(String[] args) {
+		int[] a={400, 567, 890, 765, 987};
+		
+		int[][] b={{300, 380}, {800, 1000}};
+		
+		int[] c=new int[b.length];
+		
+		
+		int k=0;
+		
+		int i=0;
+		
+		while(i<b.length){
+		    int count=0;
+		    
+		    int min=b[i][0];
+		    int max=b[i][1];
+		    
+		    for(int j=0;j<a.length;j++){
+		        if(a[j]>=min&&a[j]<=max){
+		            count++;
+		            c[k]=count;
+		        }
+		        
+		       
+		    }
+		    
+		     k++;
+		     i++;
+		}
+		
+		for(int j=0;j<c.length;j++){
+		    System.out.print(c[j]+" ");
+		}
+	}
+}
