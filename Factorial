@@ -1,0 +1,13 @@
+class Solution{
+    static long factorial(int N){
+       
+        
+        long fact=1;
+        
+        for(int i=1;i<=N;i++){
+            fact*=i;
+        }
+        
+        return fact;
+    }
+}
