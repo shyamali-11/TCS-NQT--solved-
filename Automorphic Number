@@ -1,0 +1,13 @@
+
+class Solution
+{
+    public String is_AutomorphicNumber(int n)
+    {
+        // Code here
+       int sq=(n*n)%((int)Math.pow(10,9)+7);
+       
+       if(sq%10==n%10)
+       return "Automorphic";
+       return "Not Automorphic";
+}
+}
