@@ -1,0 +1,21 @@
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int n=379;
+		
+		int k=n;
+		int sum=0;
+		
+		while(k>0){
+		    int r=k%10;
+		    sum+=r;
+		    k=k/10;
+		}
+		
+		if(n%sum==0)
+		 System.out.print("Yes");
+		 else 
+		System.out.print("No");
+	}
+}
