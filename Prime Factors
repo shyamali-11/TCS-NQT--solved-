@@ -1,0 +1,59 @@
+class Solution
+{
+    public int[] AllPrimeFactors(int N)
+    {
+       
+            
+            
+            
+            
+            
+            
+     ArrayList<Integer> li=new ArrayList<>();
+              
+              
+              for(int i=2;i*i<=N;i++){
+                  
+                  if(N%i==0){
+                      
+                      
+                      if(isPrime(i))
+                        li.add(i);
+                        
+                        
+                      if((N/i)!=i){
+                          
+                          
+                          if(isPrime((N/i)))
+                          li.add((N/i));
+                      }
+                  }
+              }
+              
+              if(isPrime(N))
+               li.add(N);
+              
+            
+    int[] res=new int[li.size()];
+              
+              
+              for(int i=0;i<li.size();i++){
+                  res[i]=li.get(i);
+              }
+              return res;
+      
+    }
+    
+    public boolean isPrime(int n){
+        
+        if(n==1)
+         return false;
+         
+         for(int i=2;i*i<=n;i++){
+             if(n%i==0)
+              return false;
+         }
+         
+         return true;
+    }
+}
