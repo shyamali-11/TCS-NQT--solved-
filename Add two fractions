@@ -1,0 +1,73 @@
+class GfG
+{ 	
+    void addFraction(int num1, int den1, int num2, int den2)
+    {
+        // Your code here
+        
+        if(den1==den2){
+            
+            //simplification of fraction
+            int nume=(num1+num2);
+            
+            int hcf=hcf(nume,den1);
+            
+            nume=nume/hcf;
+            
+            den1=den1/hcf;
+            
+           System.out.println(nume+"/"+den1);
+        }
+        else{
+            int LCM= lcm(den1,den2);
+            
+            int factor1= LCM/den1;
+            
+            int factor2=LCM/den2;
+            
+            num1*=factor1;
+            
+            num2*=factor2;
+            
+            
+            
+            //simplification of fraction
+            
+            int nume=(num1+num2);
+            
+            int hcf=hcf(nume,LCM);
+            
+             nume=nume/hcf;
+             LCM=LCM/hcf;
+             
+             
+            
+            System.out.println(nume+"/"+LCM);
+        }
+    }
+    
+    int hcf(int a,int b){
+      
+        
+        while(b!=0){
+            int r=a%b;
+            a=b;
+            b=r;
+        }
+        
+        return a;
+    }
+    
+    int lcm(int a,int b){
+        
+        int c=a;
+        int d=b;
+        
+        while(b!=0){
+            int r=a%b;
+            a=b;
+            b=r;
+        }
+        
+        return (c*d)/a;
+    }
+}
