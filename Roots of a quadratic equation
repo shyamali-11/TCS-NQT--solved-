@@ -1,0 +1,45 @@
+public class Main
+{
+	public static void main(String[] args) {
+		float a=1;
+		float b=1;
+		float c=1;
+		
+		
+		if(a==0){
+		    System.out.print("Invalid");
+		    
+		    return ;
+		}
+		
+		
+		if((b*b)>=(4*a*c)){
+		    
+		   float D= (b*b)-(4*a*c);
+		   float root1= (-1*b)+(float)(Math.sqrt(D)) ;
+		   float root2=(-1*b)-(float)(Math.sqrt(D));
+		   
+		   if(root1==root2)
+		       System.out.println("Roots are real and same");
+		   else
+		      System.out.println("Roots are real and different");
+		      
+		  System.out.println((root1/(2*a))+" , "+(root2/(2*a)));
+		   
+		}
+		else{
+		   float D=(4*a*c)-(b*b);
+		   
+		   
+		   System.out.println("Roots are imaginary");
+		   
+		  float left=(-1*b)/(2*a);
+		  
+		  float right=(float)Math.sqrt(D)/(2*a);
+		  
+		  
+		    
+		   System.out.print(left+"+i"+right+" , "+left+"-i"+right);
+		}
+	}
+}
