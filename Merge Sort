@@ -1,0 +1,63 @@
+//Time Complexity: Both in average and best case :O(n*log(n))
+//Space Complexity:  O(n)
+
+//Stable
+
+
+
+class Solution
+{
+//devide the array in two equal parts
+//sort the two subarray and merge them back together
+ void mergeSort(int a[], int l, int r)
+    {
+           if(l>=r)
+            return;
+         
+          int mid=l+(r-l)/2;
+          
+
+         //Deviding the array takes O(logn)
+          mergeSort(a,l,mid);
+          mergeSort(a,mid+1,r);
+
+       //sorting and merging them back together takes O(n)
+          merge(a,l,mid,r);
+    }
+
+
+
+
+
+ void merge(int a[], int low, int mid, int high)
+    {
+         int indx1=low;
+         int indx2=mid+1;
+         int k=0;
+         
+         int[] c=new int[high-low+1];
+         
+         while(indx1<=mid&&indx2<=high){
+             
+             if(a[indx1]<=a[indx2])
+              c[k++]=a[indx1++];
+              
+              else
+               c[k++]=a[indx2++];
+         }
+         
+         while(indx1<=mid)
+          c[k++]=a[indx1++];
+          
+         while(indx2<=high)
+          c[k++]=a[indx2++];
+          
+         
+         k=low;
+         
+         for(int i=0;i<c.length;i++)
+           a[k++]=c[i];
+         
+   
+    }
+}
