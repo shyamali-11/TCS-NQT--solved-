@@ -1,0 +1,19 @@
+class Solution{
+	void toBinary(int N) {
+		
+		
+		String str="";
+		
+		while(N!=1){
+		    
+		    int rem=N%2;
+		    
+		    str=Integer.toString(rem)+str;
+		    
+		    N=N/2;
+		}
+		str="1"+str;
+		
+		System.out.print(str);
+	}
+}
