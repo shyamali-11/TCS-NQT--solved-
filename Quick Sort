@@ -1,0 +1,47 @@
+//Time Complexity -  Average Cases-O(n*logn) and in Worst Cases -(n^2){worst cases occur when our array is sorted and pivot is always either the smalllest element or always the largest element}
+//Space Complexity -Best and Aerage cases O(log(n)) as it uses extra stack memory ; worst case -O(n) beacuse we get a skewed tree
+//It is in-place algorithm but not stable 
+
+
+
+class Solution
+{
+   
+    static void quickSort(int a[], int low, int high)
+    {   
+        
+        if(low<high){
+            
+        int k=partition(a,low,high);
+        
+         quickSort(a,low,k-1);
+         
+         quickSort(a,k+1,high);
+        }
+        
+         
+    }
+    static int partition(int a[], int low, int high)
+    {
+            int i=low-1;
+            
+            int pivot=a[high];
+            
+            for(int j=low;j<high;j++){
+                if(a[j]<pivot)
+                {
+                    i++;
+                    int temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+                
+            }
+            
+            i++;
+           
+            a[high]=a[i];
+            a[i]=pivot;
+            return i;
+    } 
+}
