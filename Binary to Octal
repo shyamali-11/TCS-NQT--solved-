@@ -1,0 +1,38 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	String str="11111";
+	
+	String res="";
+
+	
+	int j=str.length()-1;
+	
+	while(j>=0){
+	    if(j-2>0)
+	    res=Integer.toString(find(str,j,j-2))+res;
+	    
+	    else
+	    res=Integer.toString(find(str,j,0))+res;
+	     
+	     j=j-3;
+	}
+	
+	int n=Integer.parseInt(res);
+	System.out.print(n);
+	}
+
+	
+	public static int find(String str,int start,int end){
+	    int i=0;
+	    int res=0;
+	    
+	    for(int j=start;j>=end;j--){
+	        res=res+(((int)Math.pow(2,i))*(str.charAt(j)-'0'));
+	        i++;
+	    }
+	    
+	    return res;
+	}
+}
