@@ -1,0 +1,59 @@
+public class Main
+{
+	public static void main(String[] args) {
+
+
+     //octal number
+	    int n=170;
+	    
+	    String res="";
+	    
+	    while(n>0){
+	        
+	        int r=n%10;
+	        
+	        String str=find(r);
+	        
+	       res=str+res;
+	        
+	        n=n/10;
+	    }
+	   
+	   
+	   System.out.print(res);
+	}
+	
+	public static String find(int n){
+	   
+	    String str="";
+	    
+	    switch(n){
+	        case 0:
+	            str="000";
+	            break;
+	        case 1:
+	            str="001";
+	            break;
+	        case 2:
+	            str="010";
+	            break;
+	        case 3:
+	            str="011";
+	            break;
+	        case 4:
+	            str="100";
+	            break;
+	        case 5:
+	            str="101";
+	            break;
+	        case 6:
+	            str="110";
+	            break;
+	        case 7:
+	            str="111";
+	            break;
+	    }
+	    
+	    return str;
+	}
+}
