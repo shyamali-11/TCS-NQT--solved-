@@ -1,0 +1,30 @@
+class Solution
+{
+    
+    public static long findSum(String str)
+    {
+        
+       long sum=0;
+        
+        long n=0;
+        
+        int i=0;
+        
+        while(i<str.length()){
+            
+            if(str.charAt(i)>='0'&&str.charAt(i)<='9'){
+                long val=str.charAt(i)-'0';
+                n=(n*10)+val;
+            }
+            else{
+                sum+=n;
+                n=0;
+                
+            }
+            i++;
+        }
+        sum+=n;
+        return sum;
+    }
+    
+}
