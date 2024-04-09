@@ -1,0 +1,29 @@
+class Solution
+{
+    
+    static char nonrepeatingCharacter(String s)
+    {
+         HashMap<Character,Integer> hs =new LinkedHashMap<>();
+         
+         for(int i=0;i<s.length();i++){
+             if(hs.containsKey(s.charAt(i)))
+             {
+                 int val=hs.get(s.charAt(i));
+                 
+                 hs.put(s.charAt(i),val+1);
+             }
+             else
+              hs.put(s.charAt(i),1);
+         }
+         
+         for(Map.Entry<Character,Integer> h : hs.entrySet()){
+             
+             if(h.getValue()==1)
+             {
+                 return h.getKey();
+             }
+         }
+         
+         return '$';
+    }
+}
