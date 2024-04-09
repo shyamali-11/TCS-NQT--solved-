@@ -1,0 +1,37 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	String str="Take u Forward is Awesome";
+	
+    String[] a=str.split(" ");
+    
+    String res="";
+    
+    for(int i=0;i<a.length;i++){
+        String s=a[i];
+        if(s.length()==1){
+            String first=Character.toString(s.charAt(0));
+            first=first.toUpperCase();
+            res=res+" "+first;
+        }
+        else{
+            
+            
+            String first=Character.toString(s.charAt(0));
+            String last=Character.toString(s.charAt(s.length()-1));
+            first=first.toUpperCase();
+            last=last.toUpperCase();
+        
+            res=res+" "+(first+s.substring(1,s.length()-1)+last);
+        }
+        
+        
+        
+    }
+    res=res.trim();
+    
+    System.out.println(res); 
+    
+	}
+}
