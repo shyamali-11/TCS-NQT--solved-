@@ -1,0 +1,47 @@
+//Given a string consisting of spaces,\t,\n,\p,\\ and lower case  alphabets.Your task is to count the number of words where spaces,\t and \n work as separators.
+
+class Solution 
+{ 
+    int countWords(String s) 
+    { 
+       ArrayList<String> list2=new ArrayList<>();
+       String str="";
+       
+       int i=0;
+       while(i<s.length()){
+           
+            
+            
+            if(s.charAt(i)>='a'&&s.charAt(i)<='z'){
+              str+=Character.toString(s.charAt(i));
+               i++;
+            }
+            else if(s.charAt(i)==' '){
+                if(!str.isEmpty())
+                 list2.add(str);
+                 str="";
+                 i++;
+                
+            }
+            else{
+                
+                if(!str.isEmpty())
+                 list2.add(str);
+                 str="";
+                 if(i+1<s.length()&&s.charAt(i+1)!='\\')
+                 i=i+2;
+                 else
+                 i=i+1;
+            }
+            
+           
+           
+       }
+       if(!str.isEmpty())
+       list2.add(str);
+      
+       
+       return list2.size();
+       
+    }
+} 
