@@ -1,0 +1,25 @@
+class Solution {
+    int search(String X, String Y) {
+        
+        if(X.length()<Y.length())
+          return -1;
+          
+         int pos=-1;
+         int i=0;
+         int j=Y.length()-1;
+         int k=Y.length()-1;
+         
+        while(j<X.length()){
+            
+            String str1=  X.substring(i,j+1);
+            
+            if(str1.equals(Y))
+             pos=i+1;
+            
+            i=i+1;
+            j=j+1;
+        }
+         
+        return pos; 
+    }
+}
