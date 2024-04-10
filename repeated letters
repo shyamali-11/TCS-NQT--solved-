@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String str="abcdefghij google microsoft";
+		
+		String res="";
+		
+		int max=0;
+		
+		String check="";
+		
+		Set<Character> set=new TreeSet<>();
+		
+		for(int i=0;i<str.length();i++){
+		    
+		    if(str.charAt(i)==' '){
+		        
+		        if(check.length()-set.size()>max)
+		         {
+		             max=check.length()-set.size();
+		             res=check;
+		            
+		         }
+		          check="";
+		          set.clear();
+		    }
+		       
+		       else{
+		           
+		           check+=Character.toString(str.charAt(i));
+		           set.add(str.charAt(i));
+		           
+		         }
+		    }
+		
+		
+	    if(max>0)
+	    System.out.print(res);
+	    else
+	    System.out.print("-1");
+		
+		
+	}
+}
