@@ -1,0 +1,19 @@
+class Solution 
+{
+   
+    String reverseWords(String S)
+    {
+        String[] str=S.split("[.]");  //S.split(".") will give no output
+        
+        String res="";
+        
+        for(int i=str.length-2;i>=0;i--){
+            
+            res=res+"."+str[i];
+        }
+        
+        res=str[str.length-1]+res;
+        
+        return res;
+    }
+}
