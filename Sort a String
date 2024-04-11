@@ -1,0 +1,25 @@
+class Solution 
+{ 
+    String sort(String s) 
+    {
+       ArrayList<Character> li= new ArrayList<>();
+        
+       for(int i=0;i<s.length();i++){
+         li.add(s.charAt(i));
+       }
+        
+       Collections.sort(li);
+       
+       String res="";
+        
+        for(int i=0;i<li.size();i++){
+            
+            res+=li.get(i);
+        }
+        
+        return res;
+        
+        
+    }
+    
+}
