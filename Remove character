@@ -1,0 +1,35 @@
+class Solution{
+    static String removeChars(String string1, String string2){
+       
+     HashMap<Character,Integer> hs=new LinkedHashMap<>();
+      
+      for(int i=0;i<string2.length();i++){
+          char c=string2.charAt(i);
+          hs.put(c,1);
+          
+      }
+      
+
+         int i=0;
+        while(i<string1.length()){
+         
+         char c=string1.charAt(i);
+        
+         if(hs.containsKey(c)){
+             
+             if(i==0)
+                 string1=string1.substring(1,string1.length());
+             
+             else
+                 string1=(string1.substring(0,i)+string1.substring(i+1,string1.length()));
+             
+             
+         }
+         else
+          i++;
+         
+     }
+     
+     return string1;
+    }
+}
