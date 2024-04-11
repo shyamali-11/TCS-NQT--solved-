@@ -1,0 +1,25 @@
+public class Main
+{
+	public static void main(String[] args) {
+		String str="Microsoft Teams";
+		
+		String[] s=str.split(" ");
+		
+		int max=0;
+		
+		String res="";
+		
+		for(int i=0;i<s.length;i++){
+		    
+		    String check=s[i];
+		    
+		    if(check.length()>max){
+		        max=check.length();
+		        
+		        res=check;
+		    }
+		}
+		
+		System.out.print(res);
+	}
+}
