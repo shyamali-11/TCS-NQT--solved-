@@ -1,0 +1,22 @@
+class Solution {
+    public int maximumProduct(int[] a) {
+     
+
+        Arrays.sort(a);
+      int  max1=a[a.length-3];
+      int  max2=a[a.length-2];
+      int  max3=a[a.length-1];
+      int  maxn1=a[0];
+      int  maxn2=a[1];
+        
+        int prod1=max1*max2*max3;
+        int prod2=maxn1*maxn2*max3;
+
+        if(prod1<prod2)
+          return prod2;
+
+     
+          return prod1;
+
+    }
+}
